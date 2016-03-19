@@ -34,12 +34,12 @@ class WebsiteAnalyzer:
         self.pageSet = {}
 
     def reportPageAccess(self, pageUrl):
-        if self.isValidUrl(pageUrl) == False:
-            return
+        #if self.isValidUrl(pageUrl) == False:
+        #    return
         
         if pageUrl not in self.pageSet:
             self.pageSet.update({pageUrl:1})
-            print self.pageSet
+            #print self.pageSet
             self.pageList.append(pageUrl)
             
         else:
@@ -52,15 +52,18 @@ class WebsiteAnalyzer:
 
 if __name__ == "__main__":
     wa = WebsiteAnalyzer()
-    wa.reportPageAccess("https://www.abc.com")
-    wa.reportPageAccess("ftp://www.hello.com")
+    wa.reportPageAccess("www.abc.com")
+    wa.reportPageAccess("www.hello.com")
+    wa.reportPageAccess("www.hello.com")
     wa.reportPageAccess("www.hello.com")
     wa.reportPageAccess("www.abc.com")
     wa.reportPageAccess("www.abc.com")
-    wa.reportPageAccess("www.thatsawesome.com")
-    wa.reportPageAccess("www.thatsawesome.com")
-    wa.reportPageAccess("www.thatsawesome.com")
-    wa.reportPageAccess("www.thatsawesome.com")
-    print wa.getTopNPages(3)
+    wa.reportPageAccess("www.awesome.com")
+    wa.reportPageAccess("www.awesome.com")
+    wa.reportPageAccess("www.awesome.com")
+    wa.reportPageAccess("www.awesome.com")
+    wa.reportPageAccess("www.abc.com")
+    wa.reportPageAccess("www.abc.com")
+    print wa.getTopNPages(2)
 
     

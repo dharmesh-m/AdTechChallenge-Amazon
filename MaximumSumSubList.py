@@ -15,6 +15,6 @@ def getMaxSum(ar):
         getMaxSumHelper(ar, i, 0)
     
 if __name__ == "__main__":
-    ar = [0,-2,-6, -9]
+    ar = [2,1,16]
     getMaxSum(ar)
     print gsum
