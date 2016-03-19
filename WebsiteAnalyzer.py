@@ -2,16 +2,20 @@ from urlparse import urlparse
 
 class WebsiteAnalyzer:
 
+    """ This Function validate the url """
     def isValidUrl(self, url):
         pr = urlparse(url)
         if len(pr.scheme) > 0 and len(pr.netloc) > 0:
             return True
         else:
             return False
-    
+
+    """ Not in use """
     def generateHashCode(self, url):
         return None
 
+
+    """ Sorting the exixting List """
     def updatePageList(self, pageUrl):
         pageIndex = self.pageList.index(pageUrl)
         count = self.pageSet[pageUrl]
@@ -33,6 +37,9 @@ class WebsiteAnalyzer:
         self.pageList = []
         self.pageSet = {}
 
+
+    """ When the url click is reported """
+    
     def reportPageAccess(self, pageUrl):
         #if self.isValidUrl(pageUrl) == False:
         #    return
@@ -45,6 +52,8 @@ class WebsiteAnalyzer:
         else:
             self.updatePageList(pageUrl)
 
+    """ Returns the top N url list """
+    
     def getTopNPages(self, N):
         return self.pageList[:N]
         
