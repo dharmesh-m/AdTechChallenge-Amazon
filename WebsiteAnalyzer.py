@@ -15,7 +15,7 @@ class WebsiteAnalyzer:
         return None
 
 
-    """ Sorting the exixting List """
+    """ Sorting the existing List """
     def updatePageList(self, pageUrl):
         pageIndex = self.pageList.index(pageUrl)
         count = self.pageSet[pageUrl]
@@ -73,6 +73,6 @@ if __name__ == "__main__":
     wa.reportPageAccess("www.awesome.com")
     wa.reportPageAccess("www.abc.com")
     wa.reportPageAccess("www.abc.com")
-    print wa.getTopNPages(2)
+    print wa.getTopNPages(20)
 
     
